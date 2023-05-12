@@ -1,8 +1,9 @@
 :root {
   --white: #EEEEEE;
   --black: #222831;
-  --grey100: #A6A8AB;
-  --grey200: #393E46; 
+  --grey200: #A6A8AB;
+  --grey300: #393E46; 
+  --grey100: #BABBBD;
 
   --light: 300;
   --regular: 400;
@@ -12,7 +13,7 @@
 
 body {
   background-color: var(--white) !important;
-  color: var(--white) !important;
+  color: var(--black) !important;
   font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
 }
 
@@ -41,6 +42,7 @@ img {
 
 .navigation-bar {
   background-color: var(--black);
+  color: var(--white);
   padding: 1.5rem 7.5rem 1rem;
 }
 
@@ -129,10 +131,10 @@ img {
 }
 
 .search-bar__button {
-  background-color: var(--grey200);
+  background-color: var(--grey300);
   border: none;
   border-radius: 10rem;
-  color: var(--grey100);
+  color: var(--grey200);
   cursor: pointer;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -308,6 +310,9 @@ img {
   transform: translateY(-50%);
   width: 3.3rem;
 }
+.carousel__button:active {
+  opacity: .9;
+}
 
 .carousel__button--left {
   left: 2rem;
@@ -348,7 +353,6 @@ img {
 }
 
 .title {
-  color: var(--black);
   font-size: clamp(1.4rem, 4vw, 2rem);
   font-weight: var(--regular);
   position: relative;
@@ -389,7 +393,6 @@ img {
 }
 
 .category__title {
-  color: var(--black);
   margin: clamp(.8rem, 2vw, 1.1rem) 0 0;
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: var(--medium);
@@ -399,10 +402,10 @@ img {
 .products {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .product-card {
-  color: var(--black);
   cursor: pointer;
   display: grid;
   gap: 1rem;
@@ -465,7 +468,7 @@ img {
 }
 
 .price__original {
-  color: var(--grey100);
+  color: var(--grey200);
 }
 
 .discount {
@@ -473,4 +476,26 @@ img {
   border-radius: 5px;
   color: green;
   padding: .1rem .3rem;
+}
+
+.searches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.search-box {
+  background-color: var(--grey100);
+  border-radius: 10rem;
+  cursor: pointer;
+  display: flex;
+  font-weight: var(--medium);
+  font-size: clamp(.9rem, 3vw, 1.2rem);
+  padding: clamp(.3rem, .7vw, .5rem) clamp(.5rem, 3vw, 1.5rem);
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.search-box__icon {
+  margin-right: .5rem;
 }
