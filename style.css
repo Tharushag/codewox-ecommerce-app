@@ -11,6 +11,7 @@
 }
 
 body {
+  background-color: var(--white) !important;
   color: var(--white) !important;
   font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
 }
@@ -18,10 +19,6 @@ body {
 body {
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-color: var(--white);
 }
 
 a {
@@ -34,9 +31,8 @@ ul {
 }
 
 .bi {
-  bottom: 1px;
-  margin-right: .25rem;
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .navigation-bar {
@@ -44,10 +40,36 @@ ul {
   padding: 1.5rem 7.5rem 1rem;
 }
 
+@media (max-width: 1100px) {
+  .navigation-bar {
+    padding: 1.5rem 3rem 1rem;
+  }
+}
+
+@media (max-width: 870px) {
+  .navigation-bar {
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+  }
+}
+
 .primary-nav {
   align-items: center;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
   gap: 2.5rem;
+}
+
+@media (max-width: 870px) {
+  .primary-nav {
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .primary-nav {
+    grid-template-columns: auto 1fr auto;
+  }
 }
 
 .primary-nav__burger {
@@ -56,7 +78,7 @@ ul {
   flex-direction: column;
   height: 1.4rem;
   justify-content: space-between;
-  width: 52px;
+  width: 2.3rem;
 }
 
 .primary-nav__burger hr {
@@ -70,9 +92,26 @@ ul {
   font-size: 2.4rem;
 }
 
+@media (max-width: 400px) {
+  .primary-nav__brand {
+    font-size: 1.2rem;
+  }
+  
+  .primary-nav__burger {
+    width: 1.5rem;
+  }
+}
+
 .search-bar {
   position: relative;
   width: 100%;
+}
+
+@media (max-width: 760px) {
+  .search-bar {
+    grid-row: 2;
+    grid-column: span 3;
+  }
 }
 
 .search-bar__input {
@@ -103,6 +142,24 @@ ul {
   opacity: .9;
 }
 
+@media (max-width: 500px) {
+  .search-bar__input {
+    font-size: 1rem;
+    padding: .5rem 2rem;
+  }
+
+  .search-bar__button {
+    font-size: .8rem;
+  }
+}
+
+.search-bar__icon {
+  bottom: 2px;
+  display: initial !important;
+  margin-right: .25rem;
+  position: relative;
+}
+
 .nav-icons {
   display: flex;
   gap: 1.5rem;
@@ -127,6 +184,12 @@ ul {
   white-space: nowrap;
 }
 
+@media (max-width: 500px) {
+  .nav-icons__para {
+    display: none;
+  }
+}
+
 .navigation-bar__list {
   display: flex;
   justify-content: space-between;
@@ -135,8 +198,27 @@ ul {
   padding: 0;
 }
 
+.navigation-bar__list::-webkit-scrollbar {
+  height: 0;
+}
+
+@media (max-width: 800px) {
+  .navigation-bar__list {
+    justify-content: initial;
+    gap: 2rem;
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation-bar__list {
+    margin-top: 1rem;
+  }
+}
+
 .navigation-bar__link {
   position: relative;
+  white-space: nowrap;
 }
 
 .navigation-bar__link:after {
@@ -154,4 +236,110 @@ ul {
 .navigation-bar__link:hover::after {
   left: 0;
   width: 100%;
+}
+
+.main-content {
+  display: grid;
+  gap: 4rem;
+  padding: 4rem 7.5rem;
+  position: relative;
+}
+
+@media (max-width: 1100px) {
+  .main-content {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 870px) {
+  .main-content {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+}
+
+.carousel {
+  height: 22rem;
+}
+
+.carousel-inner {
+  border-radius: 22px;
+}
+
+.carousel__image {
+  height: 22rem;
+  object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .carousel {
+    left: 0;
+    position: absolute !important;
+    top: 0;
+  }
+
+  .carousel-inner {
+    border-radius: 0;  
+  }
+}
+
+.carousel__button {
+  background-color: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2);
+  border: none;
+  height: 3.3rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.3rem;
+}
+
+.carousel__button--left {
+  left: 2rem;
+}
+
+.carousel__button--right {
+  right: 2rem;
+}
+
+@media (max-width: 500px) {
+  .carousel__button {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .carousel__button--left {
+    left: 1rem;
+  }
+
+  .carousel__button--right {
+    right: 1rem;
+  }
+}
+
+.carousel__icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: var(--regular);
+  position: relative;
+  width: fit-content;
+}
+.title::after {
+  content: "";
+  background-color: var(--black);
+  display: block;
+  height: 6px;
+  margin-top: .5rem;
+  position: absolute;
+  width: 50%;
 }

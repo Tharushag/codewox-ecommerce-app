@@ -33,7 +33,7 @@
 
       <div class="search-bar">
         <input type="text" placeholder="Search for products" class="search-bar__input">
-        <button class="search-bar__button"><i class="bi bi-search"></i> Search</button>
+        <button class="search-bar__button"><i class="bi bi-search search-bar__icon"></i> Search</button>
       </div>
         
       <div class="nav-icons">
@@ -72,6 +72,35 @@
       </li>
     </ul>
   </nav>
+
+  <section class="main-content">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="https://source.unsplash.com/random" class="carousel__image d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://source.unsplash.com/random" class="carousel__image d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://source.unsplash.com/random" class="carousel__image d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel__button carousel__button--left" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <i class="bi bi-chevron-left carousel__icon"></i>
+      </button>
+      <button class="carousel__button carousel__button--right" class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <i class="bi bi-chevron-right carousel__icon"></i>
+      </button>
+    </div>
+
+    <div>
+      <h1 class="title">Top Categories</h1>
+
+      <div class="categories">
+      </div>
+    </div>
+  </section>
 
   <footer>
     <!-- Bootstrap JS -->
